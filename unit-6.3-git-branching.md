@@ -1,4 +1,4 @@
-#Part I. 
+# Part I. 
 Answer the following questions:  
 
 What git command creates a branch? **git checkout -b NAMEOFBRANCH or git branch NAME**
@@ -13,7 +13,7 @@ How do merge conflicts happen? **merge conflicts happen when changes happen to t
 directory in main that the directory was already checked out on a branch and edited**. 
 
 
-#Part II. 
+# Part II. 
 Practice with fast forward and recursive merges! Make a branch and add and commit onto it and merge it back into master.**done**. 
 
 Try to create your own merge conflict by modifying the same file on two separate commits on two separate branches.**done**. 
