@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}submit{% endblock %}
+
+{% block maintitle %}Sentence{% endblock %}
+{% block content %}
+    <p>
+        {{ sentence }}
+        <!-- {% for i in sentence %}
+            ans = request.args.get["{{i}}_data"]
+            {{ sentence }}
+        {% endfor %} -->
+        
+    </p>
+{% endblock %}
