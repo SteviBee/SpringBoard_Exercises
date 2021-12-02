@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!-- This title is for the head in BASE -->
+{% block title%}Start{% endblock%}
+
+<!-- This title is for the h1 element in the BASE.HTML -->
+{% block body_title%}{% endblock%}
+{% block content%}
+<p>
+    <h1>{{display_instructions}}</h1>
+    <form action="/questions/0">
+        <button type="submit">Start Survey</button>
+    </form>
+</p>
+
+{% endblock%}
