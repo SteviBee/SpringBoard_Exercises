@@ -57,7 +57,7 @@ def handle_answer(q):
     # ans = request.args.get("answer")
     # responses.append(ans)
 
-    ans = request.form("answer")
+    ans = request.form["answer"]
 
     # Session addition:
     cur_sess = session["responses"]
