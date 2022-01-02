@@ -1,0 +1,15 @@
+/* Inital IMG and box CSS - https://www.tutorialrepublic.com/faq/how-to-auto-resize-an-image-to-fit-into-a-div-container-using-css.php */
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; 
+}
+.box{
+    width: 250px;        
+    height: 100px;
+}
+
+body {
+    background-color: grey;
+}

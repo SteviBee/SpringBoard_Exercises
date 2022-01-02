@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Blogly {% endblock %}
+
+{% block content %}
+
+    <h2>List of Users - Without Links</h2>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user.get_full_name() }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/users"><button>More Info</button></a>
+
+{% endblock %}

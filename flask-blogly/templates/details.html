@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}User Details{% endblock %}
+
+{% block content %} 
+
+    <div class="box">
+        <img src="{{ user.image_url }}" alt="User Profile">
+    </div>
+    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+    <a href="/users/{{user.id}}/edit"><button>Edit</button></a>
+    <a href="/users/{{user.id}}/delete"><button>Delete</button></a>
+    <a href="/"><button>Home</button></a>
+
+{% endblock %}
