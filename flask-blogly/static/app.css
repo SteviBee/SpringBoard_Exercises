@@ -13,3 +13,15 @@ img{
 body {
     background-color: grey;
 }
+
+/* The cool CSS is from here: https://css-tricks.com/oprah-burst-title-thing/ */
+#main-title {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 1px;
+    font-family: 'Raleway', cursive;
+    font-weight: 100;
+    position: relative;
+    background: linear-gradient(to right, black, #eee, black);
+      }

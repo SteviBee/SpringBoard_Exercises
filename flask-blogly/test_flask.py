@@ -1,7 +1,9 @@
 from unittest import TestCase
 
 from app import app
-from models import db, User
+from models import db, User, Post
+
+# TOOD 1/5/22 PM - make test for new functions and routes!!!!
 
 # Use test database and don't clutter tests with SQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly_test'
@@ -61,4 +63,42 @@ class UserViewTestCase(TestCase):
 
             self.assertEqual(resp.status_code, 200)
             self.assertIn("TESTF2", html)
+
+
+# class PostViewTestCase(TestCase):
+#     """testing the views for the posts"""
+
+#     def setUp(self):
+#         """adding test user"""
+
+#         User.query.delete()
+#         Post.query.delete()
+
+#         user = User(first_name='test-first', last_name='test-last')
+#         db.session.add(user)
+        
+#         # get_user = User.query.get_or_404(user.id)
+
+#         post = Post(title='TESTTITLE', content='test_content', user=user)
+#         db.session.add(post)
+#         db.session.commit()
+    
+#         self.user_id = user.id 
+#         self.post_id = post.id
+
+#     def tearDown(self):
+#         """Cleaning up fouled transactions"""
+
+#         db.session.rollback()   
+
+#     # def test_view_create_post(self):
+#     #     with app.test_client() as client:
+#     #         resp = client.get('/')
+
+#     #         self.assertEqual(resp.status_code, 200)
+
+#     def test_weird(self):
+#         self.assertTrue(True)
+
+
 
