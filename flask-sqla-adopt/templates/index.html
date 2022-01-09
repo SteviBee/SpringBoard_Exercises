@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Adpot {% endblock %}
+
+{% block content %}
+
+    <h2>Home Page</h2>
+
+    <ul>
+        {% for pet in pets %}
+            <div class="box">
+                <img src="{{ pet.photo_url }}" alt="Pet Picture">
+            </div>
+            <li><a href="{{ pet.id }}">{{ pet.name }}</a></li>
+            {% if pet.available == True %}
+                <b>available</b>
+            {% else %}
+                <p>available</p>
+            {% endif %}    
+        {% endfor %}
+    </ul>
+
+    <a href="/add"><button class="btn btn-success">Add Pet</button></a>
+
+{% endblock %}

@@ -50,10 +50,53 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     # user_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
 
+    # THROUGH relationship post -> tag & back
+    tags = db.relationship('Tag',
+                                secondary='posttags',
+                                backref='posts')
 
     def __repr__(self):
         p = self
         return f"<Post {p.id} {p.title} {p.content} {p.created_at} {p.user_id}>"
+
+class PostTag(db.Model):
+    """PostTag class"""
+    
+    __tablename__ = "posttags"
+
+    post_id = db.Column(
+        db.Integer, 
+        db.ForeignKey('posts.id'),
+        nullable=False, 
+        primary_key=True)
+
+    tag_id = db.Column(
+        db.Integer, 
+        db.ForeignKey('tags.id'),
+        nullable=False, 
+        primary_key=True)
+
+class Tag(db.Model):
+    """Tag Class"""
+
+    __tablename__ = "tags"
+
+    id = db.Column(db.Integer,
+                    primary_key=True,
+                    autoincrement=True)
+    name = db.Column(db.Text)
+
+    # Regular many-to-one relationship to potstag joining table
+    # post_ids = db.relationship('PostTags',
+    #                             backref='tag')
+    # posts = db.relationship(
+    #     'Post',
+    #     secondary="posttags",
+    #     # cascade="all,delete",
+    #     backref="tags",
+    # )
+
+
 
 def connect_db(app):
     """Connect to database."""

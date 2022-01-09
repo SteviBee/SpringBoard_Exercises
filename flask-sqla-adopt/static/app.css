@@ -1,0 +1,27 @@
+/* Inital IMG and box CSS - https://www.tutorialrepublic.com/faq/how-to-auto-resize-an-image-to-fit-into-a-div-container-using-css.php */
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; 
+}
+.box{
+    width: 250px;        
+    height: 100px;
+}
+
+body {
+    background-color: rgb(204, 200, 200);
+}
+
+/* The cool CSS is from here: https://css-tricks.com/oprah-burst-title-thing/ */
+#main-title {
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
+    padding: 1px;
+    font-family: 'Raleway', cursive;
+    font-weight: 100;
+    position: relative;
+    background: linear-gradient(to right, brown, #C04000, brown);
+      }
