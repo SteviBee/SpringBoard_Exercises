@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}TITLE GOES HERE{% endblock %}</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+  <body>
+    <nav class="navbar navbar-light bg-primary justify-content-between">
+      <div class="container">
+        <div class="navbar-brand"><a class="text-white" href="/">Feedback App</a></div>
+        <ul class="nav navbar-nav flex-row float-right">
+          {% if 'user_id' not in session %}
+            <li class="nav-item p-1"><a class="nav-link text-light" href="/register">Register</a></li>
+            <li class="nav-item p-1"><a class="nav-link text-light" href="/login">Login</a></li>
+          {% endif %}
+          
+          {% if 'user_id' in session %}
+            <li class="nav-item p-1"><form method="POST" class="nav-link text-light" action="/logout"><button id="logout">Logout</button></form></li>
+            <li class="nav-item pl-5 pt-2 pb-2 text-light"><form class="nav-link text-light" action="/users/{{ session['user_id'] }}"><button id="logout">{{ session['user_id'] }}</button></form></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container text-center" style="margin-top: 2em">
+      {% for category, msg in get_flashed_messages(with_categories=True) %}
+        <div class="alert alert-{{category}}">{{ msg }}</div>
+      {% endfor %}  
+
+      {% block content %}
+      {% endblock %}
+    </div>
+  
+  </body>
+</html>

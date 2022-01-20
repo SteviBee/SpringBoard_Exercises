@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} User Info {% endblock %}
+
+{% block content %}
+
+
+
+<h1 class="display-4">You Made it!</h1>
+<div class="d-flex justify-content-center">
+  <div class="card " style="width: 18rem;">
+      <div class="card-header">
+        {{ user.username }}
+      </div>  
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ user.first_name }}</li>
+        <li class="list-group-item">{{ user.last_name }}</li>
+        <li class="list-group-item">{{ user.email }}</li>
+        <a href="/users/{{ user.username }}/delete"><li class="list-group-item">Delete User</li></a>
+      </ul>
+  </div>
+</div>
+
+<br>
+<div class="container">
+
+  {% for feedback in user.feedbacks %}
+
+    <p>Title: {{feedback.title}}</p>
+    <p>Content: {{feedback.content}}</p>
+    <form method="POST" class="" action="/feedback/{{feedback.id}}/delete"><button class="btn btn-danger">Delete</button></form>
+    <form method="GET" class="" action="/feedback/{{feedback.id}}/update"><button class="btn btn-primary">Edit</button></form>
+  {% endfor %}
+
+  <a href="/users/{{ session["user_id"] }}/feedback/add"><button class="btn btn-info">Add More Feedback</button></a>
+</div>
+
+{% endblock %}
