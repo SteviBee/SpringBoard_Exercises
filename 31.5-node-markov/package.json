@@ -1,0 +1,14 @@
+{
+  "name": "31.5-node-markov",
+  "version": "1.0.0",
+  "description": "31.5 markov & jest testing exercises",
+  "main": "makeText.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Borutta",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
