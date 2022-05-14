@@ -1,0 +1,22 @@
+.EightBall {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+
+.EightBall-ball {
+    text-shadow: red 2px 5px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 25px;
+}
+
+.EightBall-question {
+    color: "white"
+}
